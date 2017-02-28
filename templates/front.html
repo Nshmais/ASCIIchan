@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ASCII</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap.css"> <!-- bootstrap CSS -->
+
+    <style type="text/css">
+        body{font-family: 'Lato', sans-serif;color:#747704;font-weight:300; width: 800px; margin: 0 auto; padding: 5px;}
+        .art{display:flex; flex-wrap:wrap;}
+        .art-title{width: 80%; color: blue; padding-left:20px;}
+        .art-date{width: 20%; color: blue;}
+        .art-body{width: 100%; padding-left:100px;}
+        .error{color: red;}
+    </style>
+</head>
+<body>
+    <h1>ASCII</h1>
+
+    <form method="post">
+        <div>Title</div>
+        <input type="text" name="title" value="{{title}}">
+        <div>Art</div>
+        <textarea name="art">{{art}}</textarea>
+        <div class="error">{{error}}</div>
+
+
+        <input type="submit">
+    </form>
+    <hr>
+    {% for art in arts %}
+    <div class="art">
+        <div class="art-title">{{art.title}}</div>
+        <div class="art_date" align="right">{{art.date}}</div>
+        <pre class="art-body">{{art.art}}</pre>
+    </div>
+    <hr>
+    {% endfor %}
+</body>
+
+</body>
+</html>
